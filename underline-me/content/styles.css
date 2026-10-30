@@ -1,0 +1,115 @@
+/* Underline Me - Multi-Color Semantic Underlines & Floating Toast */
+
+/* Base mark style (transparent bg, solid underline) */
+mark.underline-me-highlight {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: inherit !important;
+  text-underline-offset: 3.5px !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+  transition: opacity 0.15s ease, text-decoration-color 0.15s ease !important;
+}
+
+mark.underline-me-highlight:hover {
+  opacity: 0.8 !important;
+}
+
+/* Feature 1: Multi-Color Semantic Underlines */
+
+/* 1. Core Concept / Definition: Bright Blue */
+mark.underline-me-concept {
+  text-decoration: underline solid #3b82f6 2.5px !important;
+}
+mark.underline-me-concept:hover {
+  text-decoration-color: #1d4ed8 !important;
+}
+
+/* 2. Evidence / Data / Statistic: Emerald Green */
+mark.underline-me-evidence {
+  text-decoration: underline solid #10b981 2.5px !important;
+}
+mark.underline-me-evidence:hover {
+  text-decoration-color: #047857 !important;
+}
+
+/* 3. Critique / Caveat / Counterargument: Amber Orange */
+mark.underline-me-critique {
+  text-decoration: underline solid #f97316 2.5px !important;
+}
+mark.underline-me-critique:hover {
+  text-decoration-color: #c2410c !important;
+}
+
+/* 4. Action Item / Key Takeaway: Vibrant Purple */
+mark.underline-me-takeaway {
+  text-decoration: underline solid #a855f7 2.5px !important;
+}
+mark.underline-me-takeaway:hover {
+  text-decoration-color: #7e22ce !important;
+}
+
+/* Floating Toast Notification */
+.underline-me-toast-container {
+  position: fixed !important;
+  bottom: 24px !important;
+  left: 50% !important;
+  transform: translateX(-50%) translateY(20px) !important;
+  z-index: 2147483647 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 8px 16px !important;
+  background: rgba(23, 23, 26, 0.92) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 30px !important;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif !important;
+  font-size: 12.5px !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.4 !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), 0 2px 6px rgba(0, 0, 0, 0.15) !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.underline-me-toast-visible {
+  opacity: 1 !important;
+  transform: translateX(-50%) translateY(0) !important;
+  pointer-events: auto !important;
+}
+
+.underline-me-toast-text { color: #f5f5f7 !important; }
+
+.underline-me-toast-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+}
+
+.underline-me-toast-success .underline-me-toast-icon { color: #10b981 !important; }
+.underline-me-toast-error .underline-me-toast-icon { color: #f87171 !important; }
+.underline-me-toast-info .underline-me-toast-icon { color: #60a5fa !important; }
+
+.underline-me-spinner {
+  width: 13px !important;
+  height: 13px !important;
+  border: 2px solid rgba(255, 255, 255, 0.25) !important;
+  border-top-color: #10b981 !important;
+  border-radius: 50% !important;
+  animation: underlineMeSpin 0.75s linear infinite !important;
+  display: inline-block !important;
+  flex-shrink: 0 !important;
+}
+
+@keyframes underlineMeSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

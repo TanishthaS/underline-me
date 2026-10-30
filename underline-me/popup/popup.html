@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Underline Me</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="brand">
+        <img src="../icons/icon48.png" alt="Underline Me" class="brand-icon" width="28" height="28">
+        <div class="brand-meta">
+          <h1 class="brand-title">Underline Me</h1>
+          <span class="brand-subtitle">AI Reading & Study Assistant</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Settings Card -->
+    <main class="settings-card">
+      <!-- API Key Row -->
+      <div class="field-item">
+        <div class="field-topline">
+          <label for="apiKey" class="field-label">Gemini API Key</label>
+          <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer" class="link-action">Get key ↗</a>
+        </div>
+        <div class="input-box">
+          <input type="password" id="apiKey" placeholder="Enter Gemini API key" autocomplete="off" spellcheck="false">
+          <button type="button" id="toggleApiKey" class="input-adornment-btn" title="Toggle visibility" aria-label="Toggle visibility">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="field-divider"></div>
+
+      <!-- Reading Mode Selector (Feature 3) -->
+      <div class="field-item">
+        <div class="field-topline">
+          <label for="readingMode" class="field-label">Reading Mode</label>
+          <span class="field-hint">AI extraction goal</span>
+        </div>
+        <div class="input-box">
+          <select id="readingMode" class="select-input">
+            <option value="general">🎯 General Insights (Balanced)</option>
+            <option value="exam">📚 Exam Revision (Facts, Theories, Dates)</option>
+            <option value="speed">⚡ Speed Reading (Core 1-2 Anchors)</option>
+            <option value="claims">🔍 Claims & Evidence (Fact-Checking)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field-divider"></div>
+
+      <!-- Model Engine Row -->
+      <div class="field-item">
+        <div class="field-topline">
+          <label for="modelInput" class="field-label">Model Engine</label>
+          <button type="button" id="resetModelBtn" class="link-action">Reset default</button>
+        </div>
+        <div class="input-box">
+          <input type="text" id="modelInput" placeholder="gemini-3.8-flash" spellcheck="false">
+        </div>
+      </div>
+    </main>
+
+    <!-- Color Legend Card (Feature 1) -->
+    <section class="legend-card">
+      <span class="legend-header">Semantic Underline Legend</span>
+      <div class="legend-grid">
+        <div class="legend-item"><span class="legend-dot dot-concept"></span>Concept / Def</div>
+        <div class="legend-item"><span class="legend-dot dot-evidence"></span>Data / Evidence</div>
+        <div class="legend-item"><span class="legend-dot dot-critique"></span>Critique / Caveat</div>
+        <div class="legend-item"><span class="legend-dot dot-takeaway"></span>Takeaway</div>
+      </div>
+    </section>
+
+    <!-- Action Bar -->
+    <div class="action-bar">
+      <button type="button" id="testBtn" class="btn btn-secondary">
+        <span id="testBtnText">Test Key</span>
+      </button>
+      <button type="button" id="saveBtn" class="btn btn-primary">
+        <span id="saveBtnText">Save</span>
+      </button>
+    </div>
+
+    <!-- Status Message Banner -->
+    <div id="statusMessage" class="status-banner" style="display: none;"></div>
+
+    <!-- Footer Shortcut -->
+    <footer class="app-footer">
+      <div class="shortcut-pill">
+        <span class="shortcut-text">Highlight shortcut</span>
+        <kbd id="shortcutDisplay">Alt + U</kbd>
+      </div>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
